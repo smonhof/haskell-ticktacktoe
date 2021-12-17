@@ -6,7 +6,7 @@ module GameData (
     ) where
 
 
-data FieldState = Empty | Filled Player
+data FieldState = Empty Int | Filled Player
     deriving (Show, Eq)
 
 data GameState =  GameState {

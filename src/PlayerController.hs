@@ -3,7 +3,7 @@ module PlayerController where
 import TurnUtility
 import GameData
 
---doPlayerTurn :: [[FieldState]] -> IO [[FieldState]]
+--doPlayerTurn :: [FieldState] -> IO [FieldState]
 --doPlayerTurn oldState = do
 --  putStrLn "Please select a position"
 --  hFlush stdout
@@ -19,6 +19,6 @@ readPlayerTurn oldState = do
 tryGetInput :: [FieldState] -> String -> Maybe Int
 tryGetInput field s = do
   candidate <- read s :: Maybe Int
-  if isFieldPlayable field candidate
+  if isFieldEmptyOnBoard field candidate
     then Just candidate
     else Nothing
